@@ -35,7 +35,7 @@ jobs:
 
     - name: Build app using Buildpacks
       run: |
-        pack build ${{ env.DOCKER_HUB_REPO }}:${{ env.DOCKER_HUB_IMAGE_TAG }} --path ${{ env.BASE_DIR }} --env "DISABLE_COLLECTSTATIC=1" --builder ${{ env.BUILDPACK_BUILDER }}
+        pack build ${{ env.DOCKER_HUB_IMAGE_TAG }} --path ${{ env.BASE_DIR }} --env "DISABLE_COLLECTSTATIC=1" --builder ${{ env.BUILDPACK_BUILDER }}
 
     - name: Login to Docker Hub
       id: docker_login
